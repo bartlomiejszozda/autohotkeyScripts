@@ -73,8 +73,8 @@ ifWinActive ahk_group putty
 ;arrows
 <!l::SendInput {Right}
 <!h::SendInput {Left}
-<!k::SendPlay {Up}           ; if not works then probably script start without admin rights. Exit hjklAsArrows script then run motherOfScripts helps.
-<!j::SendPlay {Down}         ; if not works then probably script start without admin rights. Exit hjklAsArrows script then run motherOfScripts helps.
+<!k::SendPlay {Up}           ; if not works then probably your script was started without admin rights. Exit this script then run motherOfScripts should help.
+<!j::SendPlay {Down}         ; if not works then probably your script was started without admin rights. Exit this script then run motherOfScripts should help.
 
 
 ;arrows combinations
@@ -89,7 +89,7 @@ ifWinActive ahk_group putty
 +<!j::SendInput +{Down}
 
 <^<!l::Send ^{Right}
-<^<!h::Send ^{Left}
+;<^<!h::Send ^{Left}
 ;<^<!k::Send ^{Up}
 ;<^<!j::Send ^{Down}
 
