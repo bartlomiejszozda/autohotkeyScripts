@@ -83,21 +83,25 @@ ifWinActive ahk_group putty
 #<!k::Send #{Up}
 #<!j::Send #{Down}
 
+;shift + single movements
 +<!l::SendInput +{Right}
 +<!h::SendInput +{Left}
 +<!k::SendInput +{Up}
 +<!j::SendInput +{Down}
 
+;words movements
 <^<!l::Send ^{Right}
 ;<^<!h::Send ^{Left}
 ;<^<!k::Send ^{Up}
 ;<^<!j::Send ^{Down}
 
+;shift + words movements
 +<^<!l::Send +^{Right}
 +<^<!h::Send +^{Left}
 +<^<!k::Send +^{Up}
 +<^<!j::Send +^{Down}
 
+;windows + shift + arrows
 #+<!l::Send #+{Right}
 #+<!h::Send #+{Left}
 #+<!k::Send #+{Up}
@@ -128,6 +132,16 @@ return
 +<!a::Send +{End}
 
 
+;delete till end of line
++<!d::Send {Shift Down}{End}{Shift Up}{Delete}
+
+;select line
++<!v::Send {Home}+{End}
+
+;left backslash to shift
+SC056::LShift
+
+
 
 ;small o big O
 <!o::Send {End}{Enter}
@@ -137,13 +151,6 @@ return
 ;undo redo
 <!u::^z
 <!r::^y
-
-;delete till end of line
-+<!d::Send {Shift Down}{End}{Shift Up}{Delete}
-
-;left backslash to shift
-SC056::LShift
-
 
 ;copy and delete (mainly for Excel usage)
 <!c::
